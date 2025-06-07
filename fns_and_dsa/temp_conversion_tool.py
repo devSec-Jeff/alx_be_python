@@ -19,4 +19,4 @@ if opt.lower() == 'c':
 elif opt.lower() == 'f':
     print(convert_to_celsius(temp))
 else:
-    print("Option not determined")
+    print("Invalid temperature. Please enter a numeric value")
