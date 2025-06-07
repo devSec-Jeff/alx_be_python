@@ -12,6 +12,9 @@ def convert_to_fahrenheit(celsius):
     return fahrenheit
 
 temp = int(input("Enter the temperature to convert:"))
+if type(temp) != int or type(temp) != float:
+    print("Invalid temperature. Please enter a numeric value")
+
 opt = input("Is this temperature in Celsius or Fahrenheit? (C/F):")
 
 if opt.lower() == 'c':
@@ -19,4 +22,4 @@ if opt.lower() == 'c':
 elif opt.lower() == 'f':
     print(convert_to_celsius(temp))
 else:
-    print("Invalid temperature. Please enter a numeric value")
+    print("Invalid option entered")
