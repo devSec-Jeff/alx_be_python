@@ -11,15 +11,20 @@ def convert_to_fahrenheit(celsius):
     fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
     return fahrenheit
 
-temp = int(input("Enter the temperature to convert:"))
-if type(temp) != int or type(temp) != float:
-    print("Invalid temperature. Please enter a numeric value")
+def main():
+    temp = int(input("Enter the temperature to convert:"))
+    if type(temp) == int or type(temp) == float:
+        opt = input("Is this temperature in Celsius or Fahrenheit? (C/F):")
+        if opt.lower() == 'c':
+            print(convert_to_fahrenheit(temp))
+        elif opt.lower() == 'f':
+            print(convert_to_celsius(temp))
+        else:
+            print("Invalid option entered")
+    else:
+        print("Invalid temperature. Enter a numeric value")
+        return
 
-opt = input("Is this temperature in Celsius or Fahrenheit? (C/F):")
 
-if opt.lower() == 'c':
-    print(convert_to_fahrenheit(temp))
-elif opt.lower() == 'f':
-    print(convert_to_celsius(temp))
-else:
-    print("Invalid option entered")
+if __name__ == "__main__":
+    main()
